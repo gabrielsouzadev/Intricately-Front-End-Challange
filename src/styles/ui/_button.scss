@@ -1,0 +1,27 @@
+.button {
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: $border-radius;
+    border: 0;
+
+    &:hover {
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.button-light {
+    background-color: $primary-light;
+    color: $secondary;
+    transition: all ease .15s;
+
+    &:hover {
+        background-color:darken($primary-light, 3%);
+    }
+}
+
+.button-md {
+    padding: 13px 30px;
+    font-size: $font-size-sm;
+}

@@ -1,0 +1,29 @@
+.header-menu-list {
+    display: flex;
+    align-items: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header-menu-item {
+    position: relative;
+    margin-right: 25px;
+    opacity: 1;
+    transition: all ease .15s;
+
+    &:hover {
+        opacity: .85;
+    }
+}
+
+.header-menu-link {
+    text-transform: uppercase;
+    color: $secondary;
+    font-size: $font-size-sm;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    user-select: none;
+}
