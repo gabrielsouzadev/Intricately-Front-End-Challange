@@ -3,6 +3,10 @@ body {
     font-size: $font-size-base;
     font-weight: $font-weight;
     background-color: $body-bg;
+
+    &.company-data {
+        background-color: $secondary;
+    }
 }
 
 a {

@@ -10,12 +10,12 @@ export default new Router({
     routes: [
         {
             path: '*',
-            name: 'company-page',
+            name: 'company page',
             component: CompanyPage
         },
         {
             path: '/company-data',
-            name: 'company-data',
+            name: 'company data',
             component: CompanyData
         }
     ]

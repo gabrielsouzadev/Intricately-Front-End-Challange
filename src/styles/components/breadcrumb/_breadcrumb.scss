@@ -1,0 +1,16 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.breadcrumb-item,
+.breadcrumb-separator {
+    text-transform: uppercase;
+    color: $secondary-light;
+    font-size: $font-size-sm;
+}
+
+.breadcrumb-separator {
+    margin: 0 10px;
+}
