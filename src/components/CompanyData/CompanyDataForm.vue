@@ -55,13 +55,17 @@
                 class="form-textarea"
                 v-model="notes" 
                 name="notes" 
-                placeholder="e.g. Good Tech Company" 
+                placeholder="e.g. Good Tech Company"
+                v-on:click="openModal"
             />
         </div>
+        <CompanyDataModal :showModal="showModal" @close="showModal = false" @sendNotes="mergeNotes"/>
     </form>
 </template>
 
 <script>
+    import CompanyDataModal from './CompanyDataModal.vue';
+
     export default {
         data: () => ({
             company_name: null,
@@ -70,7 +74,8 @@
             notes: null,
             company_name_error: false,
             company_spend_error: false,
-            company_spend_ability_error: false
+            company_spend_ability_error: false,
+            showModal: false
         }),
 
         methods: {
@@ -80,6 +85,7 @@
                 (!this.company_name) ? has_error = true : has_error = false;
                 this.company_name_error = has_error;
             },
+
             validateSpend: function(e) {
                 var has_error = false;
                 var value = parseInt(this.company_spend);
@@ -93,25 +99,34 @@
                 
                 this.company_spend_error = has_error; 
             },
+
             validateSpendAbility: function(e) {
                 var has_error = false;
-                var values = this.company_spend_ability.split('-');
 
-                var p1 = values[0].replace('$', '');
-                var p2 = values[1].replace('$', '');
+                if (this.company_spend_ability) {
+                    var values = this.company_spend_ability.split('-');
+        
+                    var p1 = values[0].replace('$', '');
+                    var p2 = values[1].replace('$', '');
 
-                if ((p1 > p2 || p2 < p1)) {
-                    has_error = true;
+                    if ((p1 > p2 || p2 < p1)) {
+                        has_error = true;
+                    } else {
+                        has_error = false;
+                    }
+
+                    p1 = this.formatPrice(p1);
+                    p2 = this.formatPrice(p2);
+
+                    this.company_spend_ability = p1 + ' - ' + p2;
+                    
                 } else {
-                    has_error = false;
+                    has_error = true;
                 }
 
-                p1 = this.formatPrice(p1);
-                p2 = this.formatPrice(p2);
-
-                this.company_spend_ability = p1 + '-' + p2;
                 this.company_spend_ability_error = has_error; 
             },
+
             isNumber: function(evt) {
                 evt = (evt) ? evt : window.event;
                 var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -122,12 +137,27 @@
                     return true;
                 }
             },
-            formatPrice(num) {
+
+            formatPrice: function(num) {
                 var p = parseFloat(num).toFixed(2).split(".");
+
                 return "$" + p[0].split("").reverse().reduce(function(acc, num, i, orig) {
                     return  num=="-" ? acc : num + (i && !(i % 3) ? "," : "") + acc;
                 }, "") + "." + p[1];
+            },
+
+            openModal: function() {
+                this.showModal = true;
+            },
+
+            mergeNotes: function(text) {
+                 this.showModal = false;
+                this.notes = text;
             }
+        },
+
+        components: {
+            CompanyDataModal
         }
     }
 </script>

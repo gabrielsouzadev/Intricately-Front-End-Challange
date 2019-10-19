@@ -11,6 +11,16 @@
     }
 }
 
+.button-primary {
+    background-color: $primary;
+    color: $secondary;
+    transition: all ease .15s;
+
+    &:hover {
+        background-color:darken($primary, 3%);
+    }
+}
+
 .button-light {
     background-color: $primary-light;
     color: $secondary;
@@ -23,5 +33,10 @@
 
 .button-md {
     padding: 13px 30px;
+    font-size: $font-size-sm;
+}
+
+.button-sm {
+    padding: 8px 30px;
     font-size: $font-size-sm;
 }

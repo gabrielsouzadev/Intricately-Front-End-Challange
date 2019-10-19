@@ -1,0 +1,45 @@
+
+.modal {
+    // display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.modal-container {
+    width: 100%;
+    max-width: 645px;
+    margin: 0 auto;
+    background: $secondary;
+    padding: 30px;
+    border-radius: $border-radius;
+    position: relative;
+}
+
+.modal-content {
+    .form-textarea {
+        max-width: 613px;
+    }
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.modal-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
