@@ -1,0 +1,30 @@
+.company-page-active {
+    border-bottom: solid 1px $border-color;
+    padding: 18px;
+    display: flex;
+    align-items: start;
+    color: $text-color;
+    font-size: 15px;
+    line-height: 20px;
+    
+    .link {
+        text-decoration: none;
+    }
+
+    .days {
+        font-weight: 500;
+        font-size: $font-size-sm;
+        color: $secondary-light;
+        width: 100%;
+        max-width: 80px;
+    }
+
+    .logo {
+        margin-right: 10px;
+    }
+
+    span {
+        color: $secondary-light;
+        text-decoration: line-through;
+    }
+}

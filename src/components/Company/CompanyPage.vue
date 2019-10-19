@@ -1,9 +1,8 @@
 <template>
     <div class="company-page">
         <CompagePageInfo />
-
         <div class="mt-25">
-            <div class="row md">
+            <div class="row md align-start">
                 <div class="col-6 md">
                     <CompanyPageActivities />
                 </div>

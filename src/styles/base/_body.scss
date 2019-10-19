@@ -4,3 +4,9 @@ body {
     font-weight: $font-weight;
     background-color: $body-bg;
 }
+
+a {
+    text-decoration: none;
+    color: $primary-light;
+    text-decoration: underline;
+}
