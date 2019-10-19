@@ -40,3 +40,27 @@
     color: $text-color;
     line-height: 25px;
 }
+
+.company-page-item {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    padding-bottom: 8px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .img {
+        margin-right: 5px;
+    }
+
+    &:last-of-type {
+        padding-bottom: 12px;
+    }
+
+    .text {
+        color: $text-color;
+        margin-top: 8px;
+    }
+}

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import CompanyPage from '../components/Company/CompanyPage.vue';
-import CompanyData from '../components/Company/CompanyData.vue';
+import CompanyPage from '../components/CompanyPage/CompanyPage.vue';
+import CompanyData from '../components/CompanyData/CompanyData.vue';
 
 Vue.use(Router)
 

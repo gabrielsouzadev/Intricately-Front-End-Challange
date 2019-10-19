@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-6 md">
                     <CompanyPageSimilarCompanies />
-                    <CompanyPageSpendHistory />
+                    <CompanyPageSpendHistory :placeholder="true" />
                     <CompanyPageSpendHistory />
                 </div>
             </div>
