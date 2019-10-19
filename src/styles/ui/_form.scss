@@ -1,0 +1,55 @@
+.form-label {
+    display: block;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    font-weight: 400;
+    color: #bbbbbb;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.form-input,
+.form-textarea {
+    border-radius: $border-radius;
+    border: solid 1px $border-color;
+    width: 100%;
+    @include placeholder-color($placeholder-color);
+    padding: 0 15px;
+    box-shadow: 0px 0px 16px -11px rgba(0, 0, 0, 0.75);
+    transition: all ease .15s;
+    color: $primary-light;
+
+    &:focus,
+    &:hover {
+        border-color: $primary-light;
+    }
+}
+
+.form-input {
+    height: 38px;
+    max-width: 340px;
+}
+
+.form-textarea {
+    max-width: 685px;
+    height: 160px;
+    padding: 15px;
+}
+
+.form-error {
+    .form-label {
+        color: $color-error;
+    }
+
+    .form-input,
+    .form-textarea {
+        border-color: $color-error;
+    }
+}
