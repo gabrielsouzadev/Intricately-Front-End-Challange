@@ -1,0 +1,48 @@
+.sidebar {
+    width: 225px;
+    background: $secondary;
+    border-radius: $border-radius;
+    border: solid 1px $border-color;
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.sidebar-item {
+    padding: 25px;
+    line-height: normal;
+    border-bottom: solid 1px $border-color;
+    text-transform: uppercase;
+    transition: all ease .15s;
+    position: relative;
+    font-weight: 500;
+    color: $primary-light;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background-color: $primary;
+        transition: all ease .15s;
+        opacity: 0;
+    }
+
+    &:last-of-type {
+        border-bottom: 0;
+    }
+
+    &:hover,
+    &.is-active {
+        background-color: $secondary-dark;
+        cursor: pointer;
+        color: $text-color;
+
+        &:before {
+            opacity: 1;
+        }
+    }
+}

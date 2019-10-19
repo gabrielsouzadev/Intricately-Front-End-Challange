@@ -1,17 +1,37 @@
+/*
+ * Grid
+ */
 .container {
     max-width: 1180px;
     margin: 0 auto;
+
+    &.md {
+        max-width: 1020px;
+    }
 }
 
 .row {
     display: flex;
     align-items: center;
     margin: 0 -20px;
+
+    &.align-start {
+        align-items: flex-start;
+    }
+
+    &.md {
+        margin: 0 -12.5px;
+    }
 }
 
 .col,
-.col-auto {
+.col-auto,
+.col-6 {
     padding: 0 20px;
+
+    &.md {
+        padding: 0 12.5px;
+    }
 }
 
 .col {
@@ -27,3 +47,11 @@
     max-width: none;
 }
 
+.col-6 {
+    width: 100%;
+    max-width: 50%;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}

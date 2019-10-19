@@ -1,0 +1,15 @@
+.block {
+    border-radius: $border-radius;
+    border: solid 1px $border-color;
+    background: $secondary;
+}
+
+.block-title {
+    border-bottom: solid 1px $border-color;
+    padding: 16px;
+    text-align: left;
+    text-transform: uppercase;
+    color: $text-color;
+    font-size: $font-size-sm;
+    font-weight: 500;
+}

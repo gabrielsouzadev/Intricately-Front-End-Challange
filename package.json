@@ -10,7 +10,7 @@
   "scripts": {
     "clean:build": "./node_modules/.bin/rimraf build",
     "predev": "npm run clean:build",
-    "dev": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server",
+    "dev": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --history-api-fallback",
     "lint": "node_modules/.bin/eslint \"src/**/**.+(js|vue)\"",
     "test": "node_modules/.bin/jest",
     "start": "npm run dev"
