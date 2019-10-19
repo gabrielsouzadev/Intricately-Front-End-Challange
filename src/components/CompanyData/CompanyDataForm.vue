@@ -88,12 +88,12 @@
 
             validateSpend: function(e) {
                 var has_error = false;
-                var value = parseInt(this.company_spend);
-                
-                if (value <= 0 || !value) {
+                var value = (this.company_spend);
+
+                if (value <= 0) {
                     has_error = true;
                 } else {
-                    this.company_spend = this.formatPrice(this.company_spend);
+                    this.company_spend = this.formatPrice(this.company_spend.replace('$', ''));
                     has_error = false;
                 }   
                 
@@ -139,6 +139,8 @@
             },
 
             formatPrice: function(num) {
+                console.log(num);
+
                 var p = parseFloat(num).toFixed(2).split(".");
 
                 return "$" + p[0].split("").reverse().reduce(function(acc, num, i, orig) {
